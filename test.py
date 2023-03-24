@@ -7,7 +7,7 @@ model.to("cuda")
 print("import tokenizer and model done")
 
 batch = tokenizer(
-    "If I have time I will ",
+    "The primary use of LLaMA is research on large language models, including ",
     return_tensors="pt", 
     add_special_tokens=False
 )
