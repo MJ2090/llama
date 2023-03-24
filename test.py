@@ -7,7 +7,7 @@ model.to("cuda")
 print("import tokenizer and model done")
 
 batch = tokenizer(
-    "Write an alticle about solar system ",
+    "Write something about solar system ",
     return_tensors="pt", 
     add_special_tokens=False
 )
