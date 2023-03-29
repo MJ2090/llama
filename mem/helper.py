@@ -30,6 +30,7 @@ def createDs():
     return ds
 
 def test1():
+    model = AutoModelForSequenceClassification.from_pretrained("bert-large-uncased").to("cuda")
     logging.set_verbosity_error()
     training_args = TrainingArguments(per_device_train_batch_size=4, **default_args)
     trainer = Trainer(model=model, args=training_args, train_dataset=createDs())
@@ -38,8 +39,9 @@ def test1():
 
 
 def test2():
+    model = AutoModelForSequenceClassification.from_pretrained("bert-large-uncased").to("cuda")
+    logging.set_verbosity_error()
     training_args = TrainingArguments(per_device_train_batch_size=1, gradient_accumulation_steps=4, **default_args)
-
     trainer = Trainer(model=model, args=training_args, train_dataset=createDs())
     result = trainer.train()
     print_summary(result)
