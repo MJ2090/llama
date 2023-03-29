@@ -38,7 +38,7 @@ def test1(per_device_train_batch_size):
     print_summary(result)
 
 
-def test2(per_device_train_batch_size，gradient_accumulation_steps):
+def test2(per_device_train_batch_size, gradient_accumulation_steps):
     model = AutoModelForSequenceClassification.from_pretrained("bert-large-uncased").to("cuda")
     logging.set_verbosity_error()
     training_args = TrainingArguments(per_device_train_batch_size=per_device_train_batch_size, gradient_accumulation_steps=gradient_accumulation_steps, **default_args)
