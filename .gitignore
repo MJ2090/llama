@@ -1,1 +1,10 @@
 *.pth
+
+# ignore ALL .pyc files
+*.pyc
+
+# the local db
+*.sqlite3
+mysite/db.sqlite3
+
+*.DS_Store
